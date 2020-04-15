@@ -1,0 +1,38 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Add New Review</title>
+</head>
+<body>
+    <% if (!user) { %>
+        <a href="/auth/google">Login with Google</a>
+      <% } else { %>
+        <%- include('../partials/nav.ejs') %>
+        <a href="/users/<%=user._id%>/visitedRestaurants">My Visited Restaurants</a>
+        <a href="/logout">Log Out</a>
+    </nav>
+    <h1>Add new review</h1>
+    <form action="/visitedRestaurants/<%=restaurantId%>/reviews/" method="POST">
+        <label>ReviewName:
+            <input type="text" name="dishName">
+        </label><br>
+        <label>Dish:
+            <input type="text" name="dish">
+        </label><br>
+        
+        <label>Rating:
+            <input type="text" name="rating">
+        </label><br>
+        <label>Price:
+            <input type="text" name="price">
+        </label><br>
+        <button type="submit">Add Review</button>
+    </form>
+    <!-- end else statment -->
+    <!-- <% } %> 
+</body>
+</html> --> 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title>My Favorite Restaurants</title>
+</head>
+<body>
+  <% if (!user) { %>
+    <a href="/auth/google">Login with Google</a>
+  <% } else { %>
+    <%- include('../partials/nav.ejs') %>
+    <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
+    <a href="/logout">Log Out</a>
+  </nav><br>
+  <h1>Favorite Restaurants</h1><br>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      
+      <!-- <th>Reviews</th> -->
+    </thead>
+    <tbody>
+      <!-- stores is passed from storeCtrl.index -->
+      <% user.favoriteRestaurants.forEach(function(r, idx){ %>
+        <tr>
+          <td><%= r.restaurantName %> </td>
+          <td><%= r.address %> </td>
+          <td><%= r.city %> </td>
+          
+          <!-- <td><form action="/favoriteRestaurants/<%=r._id%>/reviews" method="GET">
+            <button type="submit">See All Your Reviews!</button>
+          </form></td> -->
+          <td><form action="/users/<%=user._id%>/favoriteRestaurants/<%=r._id%>" method="GET">
+            <button>Update</button>
+          </form></td>
+          <td><form action="/users/<%=user._id%>/favoriteRestaurants/<%=r._id%>?_method=DELETE" method="POST">
+            <button>Delete</button>
+          </form></td>
+        </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+  <!-- end else statement for being logged in-->
+  <% } %>
+</body>
+</html>

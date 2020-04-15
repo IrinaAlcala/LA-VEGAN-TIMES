@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Update Favorite Restaurant</title>
+</head>
+<body>
+    <% if (!user) { %>
+        <a href="/auth/google">Login with Google</a>
+      <% } else { %>
+        <%- include('../partials/nav.ejs') %>
+        <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
+        <a href="/logout">Log Out</a>
+      </nav><br>
+    <h1>Update restaurant</h1>
+    <form action="/users/<%=user._id%>/favoriteRestaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+        <label>Restaurant Name:
+            <input type="text" name="restaurantName" value="<%=restaurant.restaurantName %> ">
+        </label><br>
+        <label>Address:
+            <input type="text" name="address" value="<%=restaurant.address %> ">
+        </label><br>
+        <label>City:
+            <input type="text" name="city" value="<%=restaurant.city %> ">
+        </label><br>
+        
+        <button type="submit">Update Restaurant</button>
+    </form>
+    <!-- end else statment -->
+    <% } %> 
+</body>
+</html>
