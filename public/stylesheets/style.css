@@ -11,16 +11,24 @@ body {
   margin: auto;
 }
 h1{
-  font-size: 50px;
+  font-size: 40px;
   margin: 0px;
+  text-align: center;
+
+
 }
 th{
   font-size: 30px;
+
 }
-table{
-  margin: auto;
+table.center{
+  margin: 20px;
   border-spacing: 10px;
   font-size: 20px;
+    margin-left:auto; 
+    margin-right:auto;
+  
+
 }
 form{
   font-size: 20px;

@@ -5,7 +5,8 @@ const restaurantSchema = new Schema({
     restaurantName: {type: String, required: true},
     address: {type: String, required: true},
     city: {type: String, required: true},
-    rating: {type: Number, min: 1, max: 5, default: 5}
+    // rating: {type: Number, min: 1, max: 5, default: 5}, 
+    
    
 });
 

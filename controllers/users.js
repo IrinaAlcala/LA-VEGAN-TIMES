@@ -9,6 +9,6 @@ function index(req, res) {
     if (err) return next(err);
     res.render("users/index", { 
         users,
-        user: req.user }); //step 9
+        user: req.user }); 
   });
 }

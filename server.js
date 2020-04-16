@@ -13,7 +13,8 @@ const indexRouter = require("./routes/index");
 const restaurantsRouter = require("./routes/restaurants");
 const usersRouter = require("./routes/users");
 const favoriteRestaurantsRouter = require("./routes/favoriteRestaurants")
-// const reviewsRouter = require("./routes/reviews")
+ const reviewsRouter = require("./routes/reviews");
+
 
 require("./config/database");
 require("./config/passport");
@@ -42,7 +43,7 @@ app.use("/", indexRouter);
 app.use("/restaurants", restaurantsRouter);
 app.use('/users', usersRouter);
 app.use("/", favoriteRestaurantsRouter);
-// app.use("/", reviewsRouter);
+app.use("/", reviewsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

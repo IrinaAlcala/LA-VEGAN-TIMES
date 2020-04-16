@@ -1,29 +1,6 @@
-<!-- <!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <!-- <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
 
-      <!--Let browser know website is optimized for mobile-->
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta charset="UTF-8" /> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet"> -->
-  <!-- <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>Restaurant List</title>
-</head> -->
-<!-- <body> 
-  <% if (!user) { %>
-    <a href="/auth/google">Login with Google</a>
-  <% } else { %>  
-    <%- include('../partials/nav.ejs') %>
-    <a href="/users/<%=user._id%>/visitedRestaurants">My Visited Restaurants</a>
-    <a href="/logout">Log Out</a>
-  </nav><br>
-  <% } %> -->
 
-  <!DOCTYPE html>
+  <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,7 +30,27 @@
             </ul>
           </div>
         </nav>
-      </div> 
+      </div>  -->
+
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet"> -->
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <title>All Restaurants</title>
+      </head>
+      <body>
+        <% if (!user) { %>
+          <a href="/auth/google">Login with Google</a>
+        <% } else { %>
+          <%- include('../partials/nav') %>
+          <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
+          <a href="/logout">Log Out</a>
+        </nav><br>
+        <% } %>
+
   <h1>List of Restaurants</h1><br>
   <form action="/restaurants/new" method="GET">
     <button type="submit">Add New Restaurant</button>
@@ -63,7 +60,7 @@
       <th>Name</th>
       <th>Address</th>
       <th>City</th>
-      <th>Rating</th>
+      <th>Reviews</th>
     </thead>
     <tbody>
     
@@ -72,15 +69,15 @@
           <td><%= r.restaurantName %> </td>
           <td><%= r.address %> </td>
           <td><%= r.city %> </td>
-          <td><%= r.rating %> </td>
+          <td><%= r.reviews %> </td>
           
           <% if (user) { %>
           <td><form action="/users/<%=user._id%>/favoriteRestaurants" method="POST">
             <input type="text" hidden name="restaurantName" value="<%= r.restaurantName %>">
             <input type="text" hidden name="address" value="<%= r.address %>">
             <input type="text" hidden name="city" value="<%= r.city %>">
-            <input type="text" hidden name="rating" value="<%= r.rating %>">
-            
+            <input type="text" hidden name="reviews" value="<%= r.reviews %>">
+            <!-- <button type="submit">Reviews</button> -->
             <button type="submit">Add Restaurant to Favorite</button>
           </form></td>
         </tr>
@@ -89,6 +86,6 @@
     </tbody>
   </table>
   <!-- end else statement for being logged in-->
-  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
 </body>
 </html>

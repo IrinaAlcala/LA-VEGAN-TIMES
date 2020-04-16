@@ -1,22 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+
+  <!-- <!DOCTYPE html>
+<html>
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>My Favorite Restaurants</title>
-</head>
-<body>
-  <% if (!user) { %>
-    <a href="/auth/google">Login with Google</a>
-  <% } else { %>
-    <%- include('../partials/nav.ejs') %>
-    <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
-    <a href="/logout">Log Out</a>
-  </nav><br>
+  <title>LA VEGAN TIMES</title>
+  <!-- Google Icon Fonts used by Materialize -->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <!-- JavaScript for Materialize -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head> -->
+
+<!-- <body> -->
+  <!-- <div class="navbar-fixed"> -->
+    <!-- <nav>
+      <div class="nav-wrapper"> -->
+        <!-- <a href="" class="brand-logo left">LA VEGAN TIMES</a>  -->
+        <!-- <ul class="right">
+          <li> -->
+            <!-- <ul class="right">
+              <li><a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a></li>
+              <li><a href="/restaurants">List of Restaurants</a></li>
+              <li> 
+            <% if (user) { %>
+                <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+            <% } else { %>
+                <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+            <% } %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div> -->
+
+  <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet"> -->
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <title>All Restaurants</title>
+      </head>
+      <body>
+        <% if (!user) { %>
+          <a href="/auth/google">Login with Google</a>
+        <% } else { %>
+          <%- include('../partials/nav') %>
+          <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
+          <a href="/logout">Log Out</a>
+        </nav><br>
+        <% } %>
+
   <h1>Favorite Restaurants</h1><br>
-  <table>
+  <table align="center">
     <thead>
       <th>Name</th>
       <th>Address</th>
@@ -36,10 +75,14 @@
             <button type="submit">See All Your Reviews!</button>
           </form></td> -->
           <td><form action="/users/<%=user._id%>/favoriteRestaurants/<%=r._id%>" method="GET">
-            <button>Update</button>
+
+            <button type="submit" class="btn-small black-text">UPDATE</button>
+            <!-- <waves-effect waves-light btn">Update</a> -->
+      <!-- <button>Update</button> -->
           </form></td>
           <td><form action="/users/<%=user._id%>/favoriteRestaurants/<%=r._id%>?_method=DELETE" method="POST">
-            <button>Delete</button>
+            <button type="submit" class="btn-small black-text">DELETE</button> 
+            <!-- <button>Delete</button> -->
           </form></td>
         </tr>
       <% }) %> 

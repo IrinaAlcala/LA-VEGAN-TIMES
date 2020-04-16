@@ -1,27 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
-  <title>LA VEGAN TIMES</title>
-</head>
-<body>
-        <% if (user) { %> 
-            <%- include('../partials/nav') %>
-            <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
-            <a href="/logout">Log Out</a>
+
+              
+              <!-- <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <link rel='stylesheet' href='/stylesheets/style.css' />
+                  
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                  <title>LA VEGAN TIMES</title>
+              </head>
+              <body>
+                  <div class="navbar-fixed">
+                      <nav>
+                        <div class="nav-wrapper lightblue">
+                          <a href="/restaurants" class="brand-logo left">LA VEGAN TIMES</a>
+              
+                          <ul class="right">
+                            <li><a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a></li>
+                            <li><a href="/restaurants">List of Restaurants</a></li>
+                            <li>
+                              <% if (user) { %>
+                                  <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                              <% } else { %>
+                                  <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                              <% } %>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                    </div> 
+                   
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
+                    <!-- </head>
+                    
+                    <body>
+                      <div class="navbar-fixed">
+                        <nav>
+                          <div class="nav-wrapper">
+                            <a href="" class="brand-logo left">LA VEGAN TIMES</a>
+                            <ul class="right">
+                              <li>
+                                <% if (user) { %>
+                                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                                <% } else { %>
+                                    <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                                <% } %>
+                              </li>
+                            </ul>
+                          </div>
+                        </nav>
+                      </div>  -->
+            <!-- <div>  -->
+
+
+              <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet"> -->
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+        <title>All Restaurants</title>
+      </head>
+      <body>
+        <% if (!user) { %>
+          <a href="/auth/google">Login with Google</a>
         <% } else { %>
-            <a href="/auth/google">Login with Google</a>
+          <%- include('../partials/nav') %>
+          <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
+          <a href="/logout">Log Out</a>
+        </nav><br>
         <% } %>
-    </nav>
-  <div>
-      <!-- only allows post if user is in db-->
-    <% if (user) { %> 
-        <!-- if loggedin user matches the user it's on -->
-        <% if (user._id.equals(user && user._id)) { %> 
-            <div>
+
                 <p>Welcome, <%=user.name%>!</p>
                 <p>Check out the list of vegan restaurants around Los Angeles and choose your favorites!</p>
             </div>

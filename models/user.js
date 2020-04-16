@@ -1,18 +1,26 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
+const reviewSchema = new Schema({
+    // restaurantName: {type: String, required: true},
+    dish: String,
+    
+    rating: String,
+    price: String,
+});
 const favoriteRestaurantSchema = new Schema({
     restaurantName: String,
     address: String,
     city: String,
+    review: [reviewSchema]
+        
     
-    reviews: [{type: Schema.Types.ObjectId, ref: "Review"}]
  });
 const userSchema = new Schema({
     name: String,
     email: String,
     googleId: String,
-    favoriteRestaurants: [favoriteRestaurantSchema]
+    favoriteRestaurants: [favoriteRestaurantSchema],
+    
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -14,3 +14,10 @@
 //    }
 
 // module.exports = router;
+var express = require('express');
+var router = express.Router();
+var reviewsCtrl = require('../controllers/reviews');
+
+router.post('/users/:id/favoriteRestaurants/reviews', reviewsCtrl.create);
+
+module.exports = router;
