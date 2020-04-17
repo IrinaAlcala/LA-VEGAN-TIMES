@@ -1,2 +1,39 @@
 
+      <!-- <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+          <link rel="stylesheet" href="/stylesheets/style.css" />
+          <title>Update Favorite Restaurants</title>
+      </head>
+      <body>
+          <% if (!user) { %>
+              <a href="/auth/google">Login with Google</a>
+            <% } else { %> -->
+              <%- include('../partials/nav') %>
+              <!-- <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
+              <a href="/logout">Log Out</a>
+            </nav><br> -->
+            <br><br><br>
+          <h1>Update Restaurant</h1>
+          <form action="/users/<%=user._id%>/favoriteRestaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+              <label>Restaurant Name:
+                  <input type="text" name="restaurantName" value="<%=restaurant.restaurantName %> ">
+              </label><br>
+              <label>Address:
+                  <input type="text" name="address" value="<%=restaurant.address %> ">
+              </label><br>
+              <label>City:
+                  <input type="text" name="city" value="<%=restaurant.city %> ">
+              </label><br>
+              <button class="waves-effect waves-light btn-small">Update Restaurant</button>
+
+              
+          <% } %> 
+          <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    </body>
+  </html> 
+        
       
