@@ -10,8 +10,8 @@ const methodOverride = require("method-override");
 require('dotenv').config();
 
 const indexRouter = require("./routes/index");
-const restaurantsRouter = require("./routes/restaurants");
 const usersRouter = require("./routes/users");
+const restaurantsRouter = require("./routes/restaurants");
 const favoriteRestaurantsRouter = require("./routes/favoriteRestaurants")
  const reviewsRouter = require("./routes/reviews");
 
@@ -40,8 +40,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", indexRouter);
-app.use("/restaurants", restaurantsRouter);
 app.use('/users', usersRouter);
+app.use("/restaurants", restaurantsRouter);
 app.use("/", favoriteRestaurantsRouter);
 app.use("/", reviewsRouter);
 

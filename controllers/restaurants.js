@@ -4,7 +4,8 @@ const Restaurant = require("../models/restaurant");
 module.exports = {
   index,
   showNewPage,
-  create
+  create,
+  show
 };
 function index(req, res) {
   Restaurant.find({}, function(err, restaurants) {
@@ -22,6 +23,14 @@ function showNewPage(req,res){
       user: req.user });
   });
 }
+function show(req, res) {
+  Restaurant.findById(req.params.id, function(err, restaurant) {
+    res.render("restaurants/show", {
+      title: 'Restaurant Detail', restaurant
+    });
+  });
+}
+
 function create(req,res){
   console.log(req.body);
   Restaurant.create(req.body, function(err, restaurants){

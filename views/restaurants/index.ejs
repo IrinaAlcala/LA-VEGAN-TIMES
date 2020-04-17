@@ -1,7 +1,7 @@
 
 
     <%- include('../partials/nav') %>
-    
+    <br><br><br>
   <h1>List of Restaurants</h1><br>
   <form action="/restaurants/new" method="GET">
     <button class="waves-effect waves-light btn-small">Add New Restaurant</button>
@@ -17,16 +17,16 @@
       
       <% restaurants.forEach(function(r){ %>
         <tr>
-          <td><%= r.restaurantName %> </td>
+          <td><a href="/restaurants/<%= r._id %>" ><%= r.restaurantName %></a></td>
           <td><%= r.address %> </td>
           <td><%= r.city %> </td>
-          
+          <!-- <td><%= r.review %> </td> -->
           <% if (user) { %>
           <td><form action="/users/<%=user._id%>/favoriteRestaurants" method="POST">
             <input type="text" hidden name="restaurantName" value="<%= r.restaurantName %>">
             <input type="text" hidden name="address" value="<%= r.address %>">
             <input type="text" hidden name="city" value="<%= r.city %>">
-            
+            <!-- <input type="text" hidden name="review" value="<%= r.review %>"> -->
             <button class="waves-effect waves-light btn-small">Add Restaurant to Favorites</button>
           </form></td>
         </tr>
@@ -34,7 +34,7 @@
       <% }) %> 
     </tbody>
   </table>
-  <!-- end else statement for being logged in-->
+  
 
 </body>
 </html>

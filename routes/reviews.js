@@ -18,6 +18,9 @@ var express = require('express');
 var router = express.Router();
 var reviewsCtrl = require('../controllers/reviews');
 
-router.post('/users/:id/favoriteRestaurants/:restaurantId/reviews', reviewsCtrl.create);
-
+router.post('/restaurant/:id/reviews', reviewsCtrl.create);
+router.post('/restaurant/:id/reviews', reviewsCtrl.create);
+router.get('/restaurant/:id/reviews/:reviewid/edit', reviewsCtrl.edit);
+router.put('/restaurant/:id/reviews/:reviewid', reviewsCtrl.update);
+router.delete('/restaurant/:id/reviews/:reviewid', reviewsCtrl.delete);
 module.exports = router;
