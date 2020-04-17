@@ -2,10 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
     // restaurantName: {type: String, required: true},
-    dish: String,
+    text: String,
     
-    rating: String,
-    price: String,
+    // rating: String,
+    
 });
 const favoriteRestaurantSchema = new Schema({
     restaurantName: String,

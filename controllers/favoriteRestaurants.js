@@ -11,7 +11,7 @@ function index(req, res) {
       if (err) return next(err);
       res.render("users/favoriteRestaurants", { 
           users,
-          user: req.user }); //step 9
+          user: req.user }); 
     });
   }
 function create(req,res){
@@ -35,11 +35,17 @@ function deleteRestaurant(req,res){
     })
 
 }
-function showUpdatePage(req,res){
+
+
+ function showUpdatePage(req,res){
     restaurantId = req.params.restaurantId;
     const restaurant = req.user.favoriteRestaurants.id(restaurantId);
-    User.findById(req.params.id, function(err,users){
+    user = req.user.favoriteRestaurants.findIndex(restaurant => restaurant._id == restaurantId)
+        
+     User.findById(req.params.id, function(err,users){
+        
         res.render("users/updateRestaurant",{
+           
             users,
             user: req.user,
             restaurant: restaurant,
@@ -51,9 +57,7 @@ function update(req,res){
     restaurantId = req.params.restaurantId;
     const restaurant = req.user.favoriteRestaurants.id(restaurantId);
     User.findById(req.params.id, function(err,user){
-        // req.body._id = restaurant._id;
-        // req.body.reviews = restaurant.reviews;
-        //store = req.body
+        
         index = req.user.favoriteRestaurants.findIndex(restaurant => restaurant._id == restaurantId)
         user.favoriteRestaurants.splice(index,1,req.body)
         user.save(function(err){

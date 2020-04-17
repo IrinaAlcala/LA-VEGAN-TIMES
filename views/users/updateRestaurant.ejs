@@ -1,75 +1,69 @@
 
       <!-- <!DOCTYPE html>
-<html>
-
-<head>
-  <title>LA VEGAN TIMES</title>
-  <!-- Google Icon Fonts used by Materialize -->
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="stylesheets/style.css" />
-  <!-- JavaScript for Materialize -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-</head> --> -->
-
-<!-- <body>
-  <div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="" class="brand-logo left">LA VEGAN TIMES</a>
-        <ul class="right">
-          <li>
-            <% if (user) { %>
-                <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-            <% } else { %>
-                <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-            <% } %>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div> --> 
-
-  <!DOCTYPE html>
       <html lang="en">
       <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet"> -->
-        <link rel="stylesheet" href="/stylesheets/style.css" />
-        <title>All Restaurants</title>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          
+          <link rel="stylesheet" href="/stylesheets/style.css" />
+          <title>Update Favorite Restaurants</title>
       </head>
       <body>
-        <% if (!user) { %>
-          <a href="/auth/google">Login with Google</a>
-        <% } else { %>
-          <%- include('../partials/nav') %>
-          <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
-          <a href="/logout">Log Out</a>
-        </nav><br>
-        <% } %>
+          <% if (!user) { %>
+              <a href="/auth/google">Login with Google</a>
+            <% } else { %> -->
+              <%- include('../partials/nav') %>
+              <!-- <a href="/users/<%=user._id%>/favoriteRestaurants">My Favorite Restaurants</a>
+              <a href="/logout">Log Out</a>
+            </nav><br> -->
+            <br><br><br>
+          <h1>Update Restaurant</h1>
+          <form action="/users/<%=user._id%>/favoriteRestaurants/<%= restaurant._id %>?_method=PUT" method="POST">
+              <label>Restaurant Name:
+                  <input type="text" name="restaurantName" value="<%=restaurant.restaurantName %> ">
+              </label><br>
+              <label>Address:
+                  <input type="text" name="address" value="<%=restaurant.address %> ">
+              </label><br>
+              <label>City:
+                  <input type="text" name="city" value="<%=restaurant.city %> ">
+              </label><br>
+              <button class="waves-effect waves-light btn-small">Update Restaurant</button>
 
-    <h1>Update restaurant</h1>
-    <form action="/users/<%=user._id%>/favoriteRestaurants/<%= restaurant._id %>?_method=PUT" method="POST">
-        <label>Restaurant Name:
-            <input type="text" name="restaurantName" value="<%=restaurant.restaurantName %> ">
-        </label><br>
-        <label>Address:
-            <input type="text" name="address" value="<%=restaurant.address %> ">
-        </label><br>
-        <label>City:
-            <input type="text" name="city" value="<%=restaurant.city %> ">
-        </label><br>
-        <br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/restaurants/<%= restaurant._id %>/reviews">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
+              <title>Add New Review</title>
+            </head>
+            <body>
+                <% if (!user) { %>
+                    <a href="/auth/google">Login with Google</a>
+                  <% } else { %>
+                    
+                    
+                    <br><br><br><br>
+                </nav>
+                <h1>Add new review</h1>
+                <form action="users/<%=user._id%>/favoriteRestaurants/<%=restaurantId%>/reviews/" method="POST">
+                    <label>Review:
+                        <input type="text" name="text">
+                    </label><br>
+                    
+                    
+                    
+                    <!-- <label>Rating:
+                        <input type="text" name="rating"> -->
+                    </label><br>
+                   
+                    <button class="waves-effect waves-light btn-small">Add Review</button>
+                </form>
+                 
+                <% } %> 
+            </body>
+            </html>
+             
+          </form>
+          <!-- end else statment -->
+          <% } %> 
+          <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    </body>
+  </html>
         
-        <button type="submit">Update Restaurant</button>
-    </form>
-    <!-- end else statment -->
-    <% } %> 
-</body>
-</html>
+      
