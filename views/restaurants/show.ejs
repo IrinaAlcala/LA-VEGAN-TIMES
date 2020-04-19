@@ -1,20 +1,15 @@
       
-      
-       
-      
-      <%- include('../partials/nav') %>
+  <%- include('../partials/nav') %>
+  
+  <br><br>
+    <h1>Add Reviews</h1>
+          
 <br><br><br>
-  <h1>Add new review</h1>
-<form action="/restaurant/<%=restaurant._id%>/reviews/" method="POST">
-    <label>Review:</label><br>
-    <input type="text" name="text">
-    <button class="waves-effect waves-light btn-small">Add Review</button>
-    
-    </label><br>
-</form> 
+    <form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
+      <input type="text" name="content" placeholder="Add Review Here">
+      <button class="waves-effect waves-light btn-small">Add Review</button>
+      
 
-    
- 
-        
-
-         
+      
+            
+              

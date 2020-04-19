@@ -11,7 +11,7 @@
       <th>Name</th>
       <th>Address</th>
       <th>City</th>
-      <!-- <th>Review</th> -->
+      
       
     </thead>
     <tbody>
@@ -21,14 +21,14 @@
           <td><a href="/restaurants/<%= r._id %>" ><%= r.restaurantName %></a></td>
           <td><%= r.address %> </td>
           <td><%= r.city %> </td>
-          <!-- <td><%= r.review %> </td> -->
-          <!-- <td><%= r.review %> </td> -->
+          
+          
           <% if (user) { %>
           <td><form action="/users/<%=user._id%>/favoriteRestaurants" method="POST">
             <input type="text" hidden name="restaurantName" value="<%= r.restaurantName %>">
             <input type="text" hidden name="address" value="<%= r.address %>">
             <input type="text" hidden name="city" value="<%= r.city %>">
-             <!-- <input type="text" hidden name="review" value="<%= r.review %>"> -->
+             
             <button class="waves-effect waves-light btn-small">Add Restaurant to Favorites</button>
           </form></td>
         </tr>

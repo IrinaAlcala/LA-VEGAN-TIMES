@@ -2,9 +2,66 @@
 <form action="restaurant/<%=restaurant._id%>/reviews/" method="POST">
     <label>Review:</label><br>
     <input type="text" name="text">
-    <!-- <label>Rating:
-        <input type="text" name="rating"> -->
+    
     </label><br>
     
     <button class="waves-effect waves-light btn-small">Add Review</button>
 </form>
+
+
+
+
+
+
+<h1>Add New Review</h1>
+<form action="/restaurants/<%= restaurant._id %>/reviews" method="POST">
+    <label>Review:</label><br>
+    <input type="content" name="text">
+   
+    <br>
+    
+    <button class="waves-effect waves-light btn-small">Add Review</button>
+
+    <br><br><br>
+          
+<% if (restaurant.reviews.length) %>
+  <table>
+      <thead>
+          <tr>
+              
+              <th>Review</th>
+          </tr>
+      </thead>
+      <tbody>
+      
+
+          
+              <tr>
+                  
+                 
+                  <td> <%= r.content %> </td>
+                  
+                      <td>
+                          <form class="edit-form" data-set="<%= idx %>" action="/reviews/<%= r._id %>?_method=PUT" method="POST">
+                             
+                              <input type="content" name="text" value="<%= r.content %>">
+                              <input type="submit" value="Submit Change">
+                          </form>
+                          <button id="body-edit" data-set="<%= idx %>" class="edit-submit" type="submit">Update Review</button>
+                      </td>
+                      <td>
+                          <form action="reviews/ <%= r._id %>?_method=DELETE" method="POST">
+                              <button type="submit">Delete Review</button>
+                          </form>
+                      </td>
+                  <% } %> 
+              </tr>
+              <% } %>
+              
+          </tbody>
+  </table>
+<% } else { %>
+  <h4>No Reviews Submitted Yet</h4>
+<% } %>        
+
+          
