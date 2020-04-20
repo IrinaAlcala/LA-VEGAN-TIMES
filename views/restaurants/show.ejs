@@ -1,5 +1,57 @@
       
   <%- include('../partials/nav') %>
+  br><h2>Reviews</h2>
+   
+        <div>
+            <form id="add-review-form" method="POST"
+              action="/restaurants/<%= restaurant._id %>/reviews">
+              <label>Leave A Review:</label>
+              <textarea name="content"></textarea>
+              
+              <input type="submit" value="Add Review">
+            </form>
+        </div>
+    
+    <% if (restaurant.reviews.length) { %>
+        <table>
+            <thead>
+                <tr>
+                    
+                    <th>Review</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <% restaurant.reviews.forEach(function(r) { %>
+                    <tr> 
+                        <td><%= r.content %></td>
+                        <td>
+                            <button class="edit-btn"><a href="/restaurants/<%= restaurant._id %>/reviews/<%= r._id%>/edit" id="edit">Edit</a></button>
+                        </td>
+                        <td>
+                            <form action="/restaurants/<%= restaurant._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                <input type="submit" value="Delete" id="delete">
+                            </form>
+                        </td>
+                        <% } %>
+                    </tr>
+                <% }); %>
+                <% var total = 0 %>
+                <% restaurant.reviews.forEach(function(r) { %>
+                   
+                <% }); %>
+                
+            </tbody>
+        </table>
+    
+      </body>
+      </html>
+  
+  
+  
+  
+  
+  
   
   <br><br>
     <h1>Add Reviews</h1>
