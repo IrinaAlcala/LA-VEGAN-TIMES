@@ -11,6 +11,6 @@ TECHNOLOGIES USED
 1. Item 6 Materialize
   
   
- <blockquote class="imgur-embed-pub" lang="en" data-id="a/MMCPqa9"><a href="//imgur.com/a/MMCPqa9"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+https://i.imgur.com/GfOyTGe.png
 https://i.imgur.com/4BnFl8r.png
 https://i.imgur.com/4MlhFJ7.png
