@@ -9,10 +9,9 @@ TECHNOLOGIES USED
 1. Item 4 Mongoose
 1. Item 5 Google Oath
 1. Item 6 Materialize
-
->https:/imgur.com/GfOyTGe.png)
-
-
+  
+  
+  > <blockquote class="imgur-embed-pub" lang="en" data-id="a/MMCPqa9"><a href="//imgur.com/a/MMCPqa9"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 
 
