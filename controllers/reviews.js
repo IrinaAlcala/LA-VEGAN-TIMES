@@ -7,6 +7,7 @@ var Restaurant = require('../models/restaurant');
 module.exports = {
   create,
   update,
+   edit,
   delete: deleteReview
   
  };
@@ -27,16 +28,22 @@ function create(req, res) {
   });
 }
       function deleteReview(req, res) {
-        Restaurant.findOne(req.params.id, function(err, restaurant) {
-          const review = restaurant.reviews.id(req.params.id);
-          if(!reviewSubdoc.createdBy.equals(req.user && req.user.id)) return res.redirect(`/restaurants/${restaurant._id}`);
-        reviewSubdoc.remove();
+        Restaurant.findById(req.params.restaurantId, function(err, restaurant) {
+          console.log(err)
+          const review = restaurant.reviews.id(req.params.reviewId);
+          //  if(!review.createdBy.equals(req.user && req.user.id)) return res.redirect(`/restaurants/${restaurant._id}`);
+        review.remove();
           restaurant.save(function(err) {
             res.redirect(`/restaurants/${restaurant._id}`)
           });
         });
       }
-      
+      function edit(req, res) {
+        Restaurant.findOne(req.params.id, function(err, restaurant) {
+          const review = restaurant.reviews.id(req.params.id);
+         } )  
+        }
+
       
       function update(req, res) {
         Restaurant.findOne(req.params.id, function(err, restaurant) {

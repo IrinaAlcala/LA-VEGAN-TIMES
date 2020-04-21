@@ -5,8 +5,9 @@ var express = require('express');
 var router = express.Router();
 var reviewsCtrl = require('../controllers/reviews');
 
-
+router.get('/restaurants/:restaurantId/reviews/:reviewId', reviewsCtrl.update);
 router.post('/restaurants/:id/reviews', reviewsCtrl.create);
-router.put('/reviews/:id/', reviewsCtrl.update);
-router.delete('/reviews/:id', reviewsCtrl.delete);
+router.put('/restaurants/:restaurantId/reviews/:reviewId', reviewsCtrl.update);
+
+router.delete('/restaurants/:restaurantId/reviews/:reviewId', reviewsCtrl.delete);
 module.exports = router;
