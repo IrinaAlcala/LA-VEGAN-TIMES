@@ -1,6 +1,40 @@
 
-
-    <%- include('../partials/nav') %>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="stylesheets/style.css" />
+      <title>LA VEGAN TIMES</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="/stylesheets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+    </head>
+    <body>
+      <nav>
+        <div class="nav-wrapper brown">
+          <div class="container"> 
+              
+         <a href="/restaurants" class="brand-logo right">LA VEGAN TIMES</a>
+          <ul class="left hide-on-med-and-down">
+            <li><a href="/restaurants">All Restaurants</a></li>
+                           <li> 
+                            <% if (user) { %>
+                              
+                            <li><a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a></li>
+              
+                            <% } else { %>
+                              <li><a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a></li>
+                              <li><a href="/users/<%=user._id%>/favoriteRestaurants">Favorite Restaurants</a></li>
+                            
+                       <% } %>
+                        </ul>
+                    </div>
+              
+            </nav>
+        </div>
     <br><br><br>
   <h1>List of Restaurants</h1><br>
   <form action="/restaurants/new" method="GET">
