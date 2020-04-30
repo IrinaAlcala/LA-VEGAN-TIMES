@@ -26,7 +26,8 @@ function showNewPage(req,res){
 function show(req, res) {
   Restaurant.findById(req.params.id, function(err, restaurant) {
     res.render("restaurants/show", {
-      title: 'Restaurant Detail', restaurant
+      title: 'Restaurant Detail', restaurant,
+      user: req.user
     });
   });
 }
@@ -35,5 +36,6 @@ function create(req,res){
   console.log(req.body);
   Restaurant.create(req.body, function(err, restaurants){
     res.redirect("/restaurants")
+    user: req.user
   });
 }
