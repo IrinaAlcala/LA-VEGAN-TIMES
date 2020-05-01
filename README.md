@@ -4,11 +4,15 @@ Welcome to LA VEGAN TIMES! This app will guide you through some of the best vega
 
 TECHNOLOGIES USED
 1. Item 1 Node.js
-1. Item 2 Express
-1. Item 3 Mongo DB
-1. Item 4 Mongoose
-1. Item 5 Google Oath
-1. Item 6 Materialize
+2. Item 2 Express
+3. Item 3 Mongo DB
+4. Item 4 Mongoose
+5. Item 5 Google Oath
+6. Item 6 Materialize
+
+
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](https://i.imgur.com/GfOyTGe.png)
   
   
 !(https://i.imgur.com/GfOyTGe.png)
