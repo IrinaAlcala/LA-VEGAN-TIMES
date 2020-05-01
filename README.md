@@ -11,13 +11,15 @@ TECHNOLOGIES USED
 6. Item 6 Materialize
 
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](https://i.imgur.com/GfOyTGe.png)
+
+ ![Alt Text](https://i.imgur.com/GfOyTGe.png)
   
-  
-!(https://i.imgur.com/GfOyTGe.png)
-!(https://i.imgur.com/4BnFl8r.png)
-!(https://i.imgur.com/4MlhFJ7.png)
+ ![Alt Text](https://i.imgur.com/4BnFl8r.png)
+ 
+  ![Alt Text](https://i.imgur.com/4MlhFJ7.png)
+
+
+
 
 
 
