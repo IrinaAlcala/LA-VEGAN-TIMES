@@ -18,6 +18,8 @@ TECHNOLOGIES USED
  ![Alt Text](https://i.imgur.com/4BnFl8r.png)
  
   ![Alt Text](https://i.imgur.com/4MlhFJ7.png)
+  
+  ![Alt Text](https://i.imgur.com/TljGyf1.png)
 
 
 
